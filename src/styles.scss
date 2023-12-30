@@ -1,0 +1,171 @@
+// Colors
+$text-color: #668094;
+$primary-color: #47a1f6;
+$background-color: #f0f5fb;
+
+// General Styles
+html,
+body {
+  height: 100%;
+  color: $text-color !important;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  justify-content: space-between;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff !important;
+  color: $text-color !important;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.notification-user-icons {
+  display: flex;
+  align-items: center;
+}
+
+mat-icon {
+  margin-left: 10px;
+  cursor: pointer;
+  color: $primary-color !important;
+  height: 17px !important;
+  width: 35px !important;
+  padding: 5px;
+}
+
+// Sidenav
+.mat-sidenav-container {
+  height: 100%;
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.mat-sidenav,
+.mat-sidenav-content {
+  padding: 15px;
+}
+
+.mat-sidenav-content {
+  padding: 25px 40px 0;
+  background-color: $background-color;
+  color: $text-color !important;
+}
+
+.mat-sidenav {
+  background-color: #f2f2f2;
+  width: 250px;
+}
+
+.mat-sidenav-content {
+  padding: 25px 40px 0;
+  background-color: $background-color;
+}
+
+.mat-sidenav {
+  background-color: $background-color;
+}
+
+.card-color {
+  color: $text-color !important;
+}
+
+.mat-mdc-card-content {
+  margin: 10px;
+}
+
+.title-group {
+  margin-bottom: 10px;
+}
+
+.circle-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.circle-text {
+  font-size: 10px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.list-item-text {
+  color: $primary-color;
+}
+
+.mat-mdc-list-item,
+.mat-mdc-list-option {
+  &:hover {
+    background-color: rgba($primary-color, 0.1);
+  }
+
+  &.mat-list-item-selected,
+  &.mat-option-selected {
+    background-color: $primary-color;
+    color: #fff !important;
+  }
+}
+
+// Adjusted styles for hover and active states
+.mat-mdc-list-item,
+.mat-mdc-list-option {
+  &:hover,
+  &.active-link,
+  &:active,
+  &:visited {
+    background-color: $primary-color;
+
+    // Update the color of mat-icon
+    .list-icon {
+      color: #fff !important;
+    }
+
+    // Update the color of list-item-text
+    .list-item-text {
+      color: #fff;
+    }
+  }
+}
+
+// Responsive Styles
+@media (max-width: 1024px) {
+  .inner-wrapper mat-card {
+    width: 100%;
+  }
+
+  .mat-sidenav-content {
+    padding: 20px 20px 0;
+  }
+
+  .misc-bottom-padding mat-label {
+    display: block;
+    padding-bottom: 10px;
+  }
+
+  .mat-sidenav {
+    width: 230px;
+  }
+
+  .mat-nav-list .mat-list-item {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-tool-items {
+    margin-right: 0;
+  }
+
+  .hamburger {
+    visibility: visible !important;
+  }
+}

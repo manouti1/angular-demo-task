@@ -1,0 +1,57 @@
+.mat-card-container {
+  margin: 16px;
+  overflow: hidden;
+}
+
+.custom-card {
+  width: 100%;
+  min-height: 80%;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+.mat-card-header {
+  min-height: 120px;
+}
+
+.header-content mat-icon {
+  margin-right: 8px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.photo-content {
+  width: 100%;
+  padding: 16px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.flex-item {
+  flex-basis: calc(25% - 16px);
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+.responsive-image {
+  width: 100px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  .flex-item {
+    flex-basis: calc(50% - 16px);
+  }
+}

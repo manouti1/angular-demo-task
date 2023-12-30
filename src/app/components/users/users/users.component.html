@@ -1,0 +1,93 @@
+<div class="container">
+  <!-- Toggle buttons -->
+  <div class="buttons">
+    <button mat-icon-button (click)="toggleView('table')">
+      <mat-icon>view_module</mat-icon>
+    </button>
+    <button mat-icon-button (click)="toggleView('list')">
+      <mat-icon>view_list</mat-icon>
+    </button>
+  </div>
+
+  <!-- Table View -->
+  <div *ngIf="view === 'table'">
+    <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
+    <mat-form-field>
+      <input matInput (input)="applyFilter($event)" placeholder="Filter" />
+    </mat-form-field>
+
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Avatar Column -->
+      <ng-container matColumnDef="avatar">
+        <mat-header-cell *matHeaderCellDef>Avatar</mat-header-cell>
+        <mat-cell *matCellDef="let element" style="height: 80px">
+          <img
+            src="../../../../assets/img/avatar.png"
+            alt="Default Avatar"
+            class="avatar-image"
+          />
+        </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+      </ng-container>
+
+      <!-- Username Column -->
+      <ng-container matColumnDef="username">
+        <mat-header-cell *matHeaderCellDef>Username</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.username }}</mat-cell>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.email }}</mat-cell>
+      </ng-container>
+
+      <!-- Phone Column -->
+      <ng-container matColumnDef="phone">
+        <mat-header-cell *matHeaderCellDef>Phone</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.phone }}</mat-cell>
+      </ng-container>
+
+      <!-- Company Name Column -->
+      <ng-container matColumnDef="company.name">
+        <mat-header-cell *matHeaderCellDef>Company Name</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{
+          element.company?.name
+        }}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+
+    <mat-paginator
+      [length]="dataSource.data.length"
+      [pageSizeOptions]="[5, 10, 20]"
+      [showFirstLastButtons]="true"
+      (page)="onPageChange($event)"
+    ></mat-paginator>
+  </div>
+
+  <!-- List View -->
+  <div *ngIf="view === 'list'">
+    <mat-list class="four-cols-list">
+      <mat-list-item *ngFor="let element of listItems" class="list-item">
+        <img
+          src="../../../../assets/img/avatar.png"
+          alt="Default Avatar"
+          class="avatar-image"
+        />
+        <div class="list-item-details">
+          <h1>{{ element.name }}</h1>
+          <a href="mailto:{{ element.email }}">{{ element.email }}</a>
+        </div>
+      </mat-list-item>
+    </mat-list>
+    <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
+  </div>
+</div>

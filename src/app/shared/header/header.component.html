@@ -1,0 +1,68 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="header">
+  <span class="nav-tool-items">
+    <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
+    LOREM | PSUM
+  </span>
+  <span class="notification-user-icons">
+    <mat-icon matBadge="3" matBadgeColor="warn">notifications</mat-icon>
+    <mat-icon class="circle-icon">
+      <span class="circle-text">MA</span> fiber_manual_record</mat-icon
+    >
+  </span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <!-- Sidenav -->
+  <mat-sidenav
+    #sidenav
+    [mode]="isBiggerScreen() ? 'over' : 'side'"
+    [(opened)]="opened"
+    [fixedInViewport]="true"
+    [fixedTopGap]
+    class="app-sidenav"
+  >
+    <mat-nav-list>
+      <a
+        mat-list-item
+        (click)="navigateTo('/')"
+        [class.active-link]="currentRoute === '/'"
+      >
+        <div class="nav-text">
+          <mat-icon class="list-icon">dashboard</mat-icon>
+          <span class="list-item-text">Home</span>
+        </div>
+      </a>
+
+      <a
+        mat-list-item
+        (click)="navigateTo('/users')"
+        [class.active-link]="currentRoute === '/users'"
+      >
+        <div class="nav-text">
+          <mat-icon class="list-icon">person</mat-icon>
+          <span class="list-item-text">Users</span>
+        </div>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content -->
+  <mat-sidenav-content>
+    <section class="mat-typography title-group">
+      <mat-card>
+        <mat-card-title>
+          <mat-icon class="list-icon card-color">dashboard</mat-icon>
+
+          <b>{{ pageTitle }}</b>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          {{ pageTitle }}
+        </mat-card-content>
+      </mat-card>
+      <mat-divider></mat-divider>
+    </section>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,59 @@
+<div class="mat-grid-list-container">
+  <mat-grid-list cols="4" rowHeight="200px" gutterSize="16">
+    <mat-grid-tile>
+      <mat-card class="custom-card">
+        <mat-card-header>
+          <div class="content">
+            <mat-card-title>{{ photos.length }}</mat-card-title>
+            <mat-card-subtitle><b>Total Photos</b></mat-card-subtitle>
+          </div>
+          <div class="icon-container">
+            <mat-icon>photo</mat-icon>
+          </div>
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="custom-card">
+        <mat-card-header>
+          <div class="content">
+            <mat-card-title>{{ todos.length }}</mat-card-title>
+            <mat-card-subtitle><b>Total ToDos</b></mat-card-subtitle>
+          </div>
+          <div class="icon-container">
+            <mat-icon>assignment</mat-icon>
+          </div>
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="custom-card">
+        <mat-card-header>
+          <div class="content">
+            <mat-card-title>{{ albums.length }}</mat-card-title>
+            <mat-card-subtitle><b>Total Albums</b></mat-card-subtitle>
+          </div>
+          <div class="icon-container">
+            <mat-icon>photo_album</mat-icon>
+          </div>
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="custom-card">
+        <mat-card-header>
+          <div class="content">
+            <mat-card-title>{{ users.length }}</mat-card-title>
+            <mat-card-subtitle><b>Total Users</b></mat-card-subtitle>
+          </div>
+          <div class="icon-container">
+            <mat-icon>people</mat-icon>
+          </div>
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

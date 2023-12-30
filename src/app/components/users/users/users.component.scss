@@ -1,0 +1,27 @@
+.avatar-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  align-self: flex-end;
+  margin-top: 10px;
+}
+
+.four-cols-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  .list-item {
+    width: calc(25% - 16px);
+    margin: 8px;
+    box-sizing: border-box;
+  }
+}
